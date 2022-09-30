@@ -1,7 +1,7 @@
 import { Cards } from '../../types/interfaces';
 import { cards } from './cards';
 
-function drawCard(cards: Cards[]) {
+export function drawCard(cards: Cards[]) {
     const cardContainer = <HTMLElement>document.querySelector('.card-container');
     for (let i = 0; i < cards.length; i++) {
         const productCard = <HTMLElement>document.createElement('div');
