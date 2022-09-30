@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Store of aesthetic tables</title>
+        <link rel="icon" href="assets/svg/favicon.ico" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    </head>
+    <body class="body">
+        <div class="screen"></div>
+        <header class="header">
+            <div class="header-logo-container">
+                <img src="assets/svg/logo.png" alt="Store logo" class="main-logo" />
+            </div>
+            <nav class="navigation">
+                <div class="navigation-search">
+                    <input
+                        type="search"
+                        placeholder="Search"
+                        autofocus
+                        autocomplete="off"
+                        class="navigation-search-place"
+                    />
+                    <button class="navigation-search-btn"><i class="bi bi-search"></i></button>
+                </div>
+                <ul class="navigation-list">
+                    <li class="navigation-item">
+                        <a href="#" class="navigation-link home-link">Home</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="#" class="navigation-link catalog-link">Catalog</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="#contacts" class="navigation-link contacts-link">Contacts</a>
+                    </li>
+                    <li class="navigation-item navigation-item-cart">
+                        <a href="#" class="navigation-link cart-link"><i class="bi bi-cart2"></i></a>
+                        <span class="counter">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <h1 class="title">Catalog</h1>
+            <div class="catalog-and-filters">
+                <section class="catalog">
+                    <div class="sorting-panel">
+                        <div class="sorting-form">
+                            <span class="sort-by">Sort by:</span>
+                            <select
+                                id="select"
+                                class="form-select sorting-method"
+                                aria-label="Default select example"
+                                onchange="sort()"
+                            >
+                                <option value="Сhoose sorting" class="option">Сhoose sorting</option>
+                                <option value="Name (A-Z)" class="option">Name (A-Z)</option>
+                                <option value="Name (Z-A)" class="option">Name (Z-A)</option>
+                                <option value="Price (Lowest)" class="option">Price (Lowest)</option>
+                                <option value="Price (Highest)" class="option">Price (Highest)</option>
+                            </select>
+                            <button class="filter-by-popular">Show popular</button>
+                        </div>
+                        <div class="page-view">
+                            <button class="button-view button-tiles">
+                                <span class="button-tiles-elem"></span>
+                                <span class="button-tiles-elem"></span>
+                                <span class="button-tiles-elem"></span>
+                                <span class="button-tiles-elem"></span>
+                            </button>
+                            <button class="button-show-filter">
+                                <span class="filter-icon"><i class="bi bi-funnel-fill"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="line-under" />
+
+                    <div class="card-container"></div>
+                </section>
+
+                <aside class="filter">
+                    <div class="filter-panel">
+                        <div class="range price-range">
+                            <h5 class="filter-title price-title">Price, $</h5>
+                            <div class="range-inputs price-range-inputs">
+                                <label class="range-label price-range-label">
+                                    <span class="price-range-from">From</span>
+                                    <input
+                                        type="number"
+                                        min="50"
+                                        max="1030"
+                                        placeholder="50"
+                                        class="range-input price-range-input price-range-input1"
+                                    />
+                                </label>
+                                <label class="range-label price-range-label">
+                                    <span class="price-range-to">to</span>
+                                    <input
+                                        type="number"
+                                        min="50"
+                                        max="1030"
+                                        placeholder="1030"
+                                        class="range-input price-range-input price-range-input2"
+                                    />
+                                </label>
+                            </div>
+                            <div class="range-slider price-range-slider"></div>
+                            <hr class="line-under-filter line-under-price" />
+                        </div>
+
+                        <div class="range length-range">
+                            <h5 class="filter-title length-title">Length, mm</h5>
+                            <div class="range-inputs length-range-inputs">
+                                <label class="range-label length-range-label">
+                                    <span class="length-range-from">From</span>
+                                    <input
+                                        type="number"
+                                        min="290"
+                                        max="2100"
+                                        placeholder="290"
+                                        class="range-input length-range-input length-range-input1"
+                                    />
+                                </label>
+                                <label class="range-label length-range-label">
+                                    <span class="length-range-to">to</span>
+                                    <input
+                                        type="number"
+                                        min="290"
+                                        max="2100"
+                                        placeholder="2100"
+                                        class="range-input length-range-input length-range-input2"
+                                    />
+                                </label>
+                            </div>
+                            <div class="range-slider length-range-slider"></div>
+                            <hr class="line-under-filter line-under-length" />
+                        </div>
+
+                        <div class="filter-by-type filter-by-type-created">
+                            <h5 class="filter-title created-title">Created for</h5>
+                            <div class="form-check-container">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input form-check-input-office"
+                                        type="checkbox"
+                                        value="office"
+                                        id="office"
+                                    />
+                                    <label class="form-check-label" for="office"> Office </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input form-check-input-dinner"
+                                        type="checkbox"
+                                        value="dinner"
+                                        id="dinner"
+                                    />
+                                    <label class="form-check-label" for="dinner"> Dinner </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input form-check-input-decorative"
+                                        type="checkbox"
+                                        value="decorative"
+                                        id="decorative"
+                                    />
+                                    <label class="form-check-label" for="decorative"> Decorative </label>
+                                </div>
+                            </div>
+                            <hr class="line-under-filter" />
+                        </div>
+
+                        <div class="filter-by-type filter-by-type-shape">
+                            <h5 class="filter-title shape-title">Shape</h5>
+                            <div class="form-check-container">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input form-check-input-square"
+                                        type="checkbox"
+                                        value="square"
+                                        id="square"
+                                    />
+                                    <label class="form-check-label" for="square"> Square </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input form-check-input-rounded"
+                                        type="checkbox"
+                                        value="rounded"
+                                        id="rounded"
+                                    />
+                                    <label class="form-check-label" for="rounded"> Rounded </label>
+                                </div>
+                            </div>
+                            <hr class="line-under-filter" />
+                        </div>
+
+                        <div class="filter-by-type filter-by-type-color">
+                            <h5 class="filter-title color-title">Color</h5>
+                            <div class="color-filter-container">
+                                <input type="button" class="color color-white" title="White" />
+                                <input type="button" class="color color-black" title="Black" />
+                                <input type="button" class="color color-wood" title="Wood" />
+                            </div>
+                            <hr class="line-under-filter" />
+                        </div>
+
+                        <button class="reset add-filter">Apply filters</button>
+
+                        <button class="reset reset-filter">Clear filters</button>
+
+                        <button class="reset reset-settings">Reset all settings</button>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="footer" id="contacts">
+            <div class="contacts-container">
+                <ul class="contacts-list">
+                    <li class="contacts-item">
+                        <i class="bi bi-telephone-fill"></i><span class="phone-number"> +375(29) 123-45-69</span>
+                    </li>
+                    <li class="contacts-item">
+                        <i class="bi bi-envelope"></i
+                        ><a href="mailto:vikukulichka.terekhova@gmail.com" class="e-mail contact-link"> E-mail</a>
+                    </li>
+                    <li class="contacts-item">
+                        <i class="bi bi-telegram"></i
+                        ><a href="https://t.me/Wigoria" class="telegram contact-link"> Telegram</a>
+                    </li>
+                    <li class="contacts-item">
+                        <i class="bi bi-pin-map"></i
+                        ><a href="https://goo.gl/maps/SXwx7EshbzHkT3QUA" class="address contact-link"> Our address</a>
+                    </li>
+                    <li class="contacts-item">
+                        <i class="bi bi-github"></i
+                        ><a href="https://github.com/vikuli" class="github contact-link"> GitHub</a>
+                    </li>
+                    <li class="contacts-item contacts-item-rs">
+                        <a href="https://rs.school/js/" class="rsschool"
+                            ><img src="https://rs.school/images/rs_school_js.svg" alt="rs-logo" class="rsschool-logo"
+                        /></a>
+                    </li>
+                </ul>
+                <div class="water-mark">The concept, 2022</div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

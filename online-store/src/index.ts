@@ -1,0 +1,11 @@
+import './js/adaptive';
+import './js/rangeSlider';
+import './js/product';
+import './js/cart';
+import './js/sorting';
+import './js/filterByPopular';
+import './js/filters';
+import './js/resetFilter';
+import './js/resetSettings';
+import './js/search';
+import './style.css';
