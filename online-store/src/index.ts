@@ -1,4 +1,4 @@
-import './js/adaptive';
+/*import './js/adaptive';
 import './js/rangeSlider';
 import './js/product';
 import './js/cart';
@@ -7,5 +7,7 @@ import './js/filterByPopular';
 import './js/filters';
 import './js/resetFilter';
 import './js/resetSettings';
-import './js/search';
+import './js/search';*/
+import './js/product/card.draw';
+import './js/addToCart/addToCart';
 import './style.css';
