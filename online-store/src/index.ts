@@ -11,4 +11,9 @@ import './js/search';*/
 import './js/product/card.draw';
 import './js/addToCart/addToCart';
 import './js/search/search';
+import './js/sorting/sortByName';
+import './js/sorting/sortByPrice';
+import './js/sorting/sortByPopularity';
+import './js/filtration/rangeSlider/lengthRange';
+import './js/filtration/rangeSlider/priceRange';
 import './style.css';
